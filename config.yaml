@@ -31,7 +31,7 @@ naive:
     sketch_compare: False
 taxonomic_profile:
     kaiju: False
-    kraken2: False
+    kraken2: True
     metaphlan2: False
 functional_profile:
     humann2: False
@@ -50,7 +50,7 @@ multiqc_report: True
 fastp:
     extra: ""
 remove_host:
-    db_path: ""              # [Required] Path to folder containing a Kraken2 database with host sequences (taxo.k2d, etc.)
+    db_path: "/db/kraken2/kraken2_GRCh38"              # [Required] Path to folder containing a Kraken2 database with host sequences (taxo.k2d, etc.)
     confidence: 0.1          # Kraken2 confidence parameter, normally set to 0.1
     extra: "--quick"         # Additional command line arguments to kraken2
     keep_kraken: False       # StaG deletes the kraken and kreport output files by default, set to True to keep them.
@@ -78,7 +78,7 @@ kaiju:
     value_column: "percent"    # Value column top use in all_samples summary. Options are typically "percent" or "reads"
 
 kraken2:
-    db: ""                   # [Required] Path to Kraken2 DB folder
+    db: "/db/kraken2/ctmr_abvhf"                   # [Required] Path to Kraken2 DB folder
     confidence: 0.1          # Kraken2 confidence score, float in [0,1]
     extra: ""                # Extra command line arguments for kraken2 (do not add/change output files)
     bracken:
